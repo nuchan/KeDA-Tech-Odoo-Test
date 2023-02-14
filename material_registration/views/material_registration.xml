@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_material_registration_form" model="ir.ui.view">
+        <field name="name">material.registration.form</field>
+        <field name="model">material.registration</field>
+        <field name="arch" type="xml">
+            <form string="Material Registration">
+                <group>
+                    <group>
+                        <field name="code" />
+                        <field name="name" />
+                        <field name="type" />
+                        <field name="price" />
+                        <field name="supplier_id"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="view_material_registration_tree" model="ir.ui.view">
+        <field name="name">material.registration.tree</field>
+        <field name="model">material.registration</field>
+        <field name="arch" type="xml">
+            <tree string="Material Registration">
+                <field name="code" />
+                <field name="name" />
+                <field name="type" />
+                <field name="price" />
+                <field name="supplier_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_material_registration_search" model="ir.ui.view">
+        <field name="name">material.registration.search</field>
+        <field name="model">material.registration</field>
+        <field name="arch" type="xml">
+            <search string="Search Material Registration">
+                <field name="type" string="Material Type" />
+                <field name="name" string="Material Name" />
+                <field name="code" string="Material Code" />
+                <field name="supplier_id" string="Supplier" />
+            </search>
+        </field>
+    </record>
+    <record id="action_material_registration_tree" model="ir.actions.act_window">
+        <field name="name">Material Registration</field>
+        <field name="res_model">material.registration</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        action="action_material_registration_tree"
+        id="menu_action_material_registration_tree"
+        parent="base.menu_users"
+    />
+</odoo>
